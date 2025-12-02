@@ -1,0 +1,8 @@
+resource,type,encrypted
+aws-athena-rodney-east-central-1,S3,True
+cf-templates-10nt2ulxehzaj-us-east-2,S3,True
+demo-encryption-rodney,S3,True
+hitrust-evidence-ra,S3,True
+my-secure-bucket-kneauxthecloud,S3,True
+my-secure-bucket-kneauxthecloud2,S3,True
+rodney-resume-bucket,S3,True
