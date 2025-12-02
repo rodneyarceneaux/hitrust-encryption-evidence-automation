@@ -6,7 +6,6 @@ output "export_bucket" {
   value = aws_s3_bucket.export_bucket.bucket
 }
 
-# Add these once your Lambda is defined
 output "lambda_function_name" {
   value = aws_lambda_function.evidence_export.function_name
 }
