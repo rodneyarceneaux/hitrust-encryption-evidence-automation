@@ -29,22 +29,22 @@ jobs:
         uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Init
-        working-directory: terraform
+        working-directory: terraform-access-analyzer
         run: terraform init
 
       - name: Terraform Format
-        working-directory: terraform
+        working-directory: terraform-access-analyzer
         run: terraform fmt -recursive
 
       - name: Terraform Validate
-        working-directory: terraform
+        working-directory: terraform-access-analyzer
         run: terraform validate
 
       - name: Terraform Plan
-        working-directory: terraform
+        working-directory: terraform-access-analyzer
         run: terraform plan
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
-        working-directory: terraform
+        working-directory: terraform-access-analyzer
         run: terraform apply -auto-approve
