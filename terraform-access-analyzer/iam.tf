@@ -33,9 +33,9 @@ resource "aws_iam_role" "export_role" {
   })
 }
 
-resource "aws_iam_role_policy" "export_policy" {
-  name = "iam-access-analyzer-export-policy"
-  role = aws_iam_role.export_role.id
+resource "aws_iam_policy" "export_policy" {
+  name        = "iam-access-analyzer-export-policy"
+  description = "Allow Access Analyzer to export findings to S3"
 
   policy = jsonencode({
     Version = "2012-10-17"
@@ -47,3 +47,7 @@ resource "aws_iam_role_policy" "export_policy" {
   })
 }
 
+resource "aws_iam_role_policy_attachment" "export_attach" {
+  role       = aws_iam_role.export_role.name
+  policy_arn = aws_iam_policy.export_policy.arn
+}
